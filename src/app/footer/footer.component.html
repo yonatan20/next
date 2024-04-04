@@ -1,0 +1,11 @@
+<img class="next-logo" src="/assets/next-logo.png" alt="image">
+<div class="content-us">Contact us</div>
+<div class="mail">support@nextmovies.com</div>
+<div class="time">Mon – Fri | 6:00am – 5:00 pm PT</div>
+<div class="logos-container">
+  <img *ngFor="let logo of socialLogos"
+       class="social-logo"
+       src="/assets/social/{{logo.name}}.png"
+       (click)="goToLink(logo.url)"
+       alt="{{logo.name}}">
+</div>

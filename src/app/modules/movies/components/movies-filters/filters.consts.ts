@@ -1,0 +1,1 @@
+export const RATING_FILTER_THRESHOLD = 8;

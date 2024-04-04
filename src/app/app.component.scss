@@ -1,0 +1,23 @@
+@import './common/scss/media-queries';
+
+.header {
+  padding-top: 23px;
+  padding-bottom: 18px;
+
+  .logo {
+    margin-left: 143px;
+    width: 260px;
+
+    @media #{$mobile} {
+      width: 157px;
+      margin-left: 9px;
+    }
+  }
+}
+
+.container {
+  overflow: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

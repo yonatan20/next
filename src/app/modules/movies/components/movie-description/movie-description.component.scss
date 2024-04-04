@@ -1,0 +1,12 @@
+@import '../../../../common/scss/media-queries';
+
+:host {
+  background-color: #ffffff;
+  border-radius: 4px;
+  display: inline-flex;
+  padding: 50px 134px 50px 139px;
+
+  @media #{$mobile} {
+    padding: 18px 19px 22px;
+  }
+}

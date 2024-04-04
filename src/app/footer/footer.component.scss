@@ -1,0 +1,37 @@
+:host {
+  background-color: #231F20;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.next-logo {
+  margin-top: 40px;
+}
+
+.content-us {
+  margin-top: 27px;
+  font-size: 33px;
+}
+
+.mail {
+  margin-top: 13px;
+}
+
+.mail, .time {
+  font-size:16px;
+  line-height: 20px;
+}
+
+.logos-container {
+  margin-top: 38px;
+  display: flex;
+  justify-content: space-between;
+  width: 208px;
+
+  .social-logo {
+    cursor: pointer;
+  }
+}

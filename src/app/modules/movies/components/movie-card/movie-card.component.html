@@ -1,0 +1,15 @@
+<img class="image" [src]="movie.image" [alt]="movie.title"/>
+<div class="container">
+  <div class="title" title="{{movie.title}} ({{movie.released}})">{{movie.title}} ({{movie.released}})</div>
+  <div class="runtime" *ngIf="descriptive">{{movie.runtime | timeFormat}}</div>
+
+  <div class="rating-container">
+    <img src="../../../../../assets/star.png" alt="image">
+    <span class="value">{{movie.rating || 'N/A'}}</span>
+  </div>
+  <div class="desc-text" *ngIf="descriptive" [innerHtml]="movie.synopsis"></div>
+  <div class="more-container" (click)="actionButton.onClick(movie)">
+    <div>{{actionButton.text}}</div>
+    <img class="arrow" src="../../../../../assets/{{actionButton.icon}}.png" alt="arrow">
+  </div>
+</div>

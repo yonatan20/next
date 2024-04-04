@@ -1,0 +1,38 @@
+<span class="title">Explore your next Movies and tv shows</span>
+
+<app-loader *ngIf="(loading$ | async) ; else list"></app-loader>
+
+<ng-template #list>
+  <ng-container *ngIf="movies$ | async as movies">
+    <ng-container *ngIf="movies.length else noMovies">
+
+      <app-movies-filters (filter)="applyFilter($event)"></app-movies-filters>
+      <ng-container *ngIf="(movies | movieFilter : filters) as filteredMovies">
+        <div class="search-results" [class.hide]="movies.length === filteredMovies.length">{{filteredMovies.length}}
+          movies found according to your search
+        </div>
+        <ng-container *ngIf="filteredMovies.length else noSearchResults">
+          <div class="cards-container">
+            <app-movie-card [movie]="movie"
+                            class="card"
+                            *ngFor="let movie of filteredMovies"
+                            [actionButton]="readMoreButton">
+            </app-movie-card>
+          </div>
+        </ng-container>
+      </ng-container>
+
+    </ng-container>
+  </ng-container>
+
+</ng-template>
+
+<ng-template #noMovies>
+  <div class="error-message">There is no Movies playing right now, come back tomorrow</div>
+</ng-template>
+
+<ng-template #noSearchResults>
+  <div class="error-message">Sorry, no matches found for your search term. Please try again with a different keyword
+  </div>
+</ng-template>
+

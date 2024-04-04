@@ -1,0 +1,19 @@
+:host {
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 2px 8px;
+  display: inline-flex;
+  justify-content: center;
+  background-color: #005cbb;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #358be4;
+  }
+
+  &.selected {
+    background-color: #304a65;
+  }
+}
