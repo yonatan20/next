@@ -13,11 +13,22 @@
       margin-left: 9px;
     }
   }
+
+  @media #{$mobile} {
+    padding-top: 13px;
+    padding-bottom: 9px;
+  }
 }
 
-.container {
+.app-container {
   overflow: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+#modal-wrapper {
+  position: relative;
+  overflow: auto;
 }

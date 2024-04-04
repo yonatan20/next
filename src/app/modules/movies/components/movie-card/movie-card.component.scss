@@ -84,8 +84,10 @@ $mobile-width: 256px;
 
       .title {
         font-size: 30px;
+        margin-top: 6px;
         text-align: left;
-        height: 70px;
+        height: 33px;
+        -webkit-line-clamp: 1;
       }
     }
   }

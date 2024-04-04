@@ -40,7 +40,7 @@ const routes: Routes = [
     MoviesComponent
   ],
   imports: [
-    SimpleModalModule,
+    SimpleModalModule.forRoot({container: 'modal-wrapper'}),
     RouterModule.forChild(routes),
     CommonModule,
     HttpClientModule,
