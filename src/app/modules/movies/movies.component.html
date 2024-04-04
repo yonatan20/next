@@ -12,8 +12,9 @@
           movies found according to your search
         </div>
         <ng-container *ngIf="filteredMovies.length else noSearchResults">
-          <div class="cards-container">
+          <div class="cards-container" [@enterAnimation]="" >
             <app-movie-card [movie]="movie"
+                            [@enterAnimation]=""
                             class="card"
                             *ngFor="let movie of filteredMovies"
                             [actionButton]="readMoreButton">

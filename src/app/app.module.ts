@@ -5,6 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MoviesModule} from "./modules/movies/movies.module";
 import {FooterComponent} from './footer/footer.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export const BASE_URL_TOKEN = new InjectionToken<string>('BASE_URL', {
   providedIn: 'root',
@@ -17,7 +18,7 @@ export const BASE_URL_TOKEN = new InjectionToken<string>('BASE_URL', {
     FooterComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MoviesModule,
   ],

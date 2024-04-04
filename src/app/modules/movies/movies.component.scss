@@ -17,10 +17,11 @@
 .title {
   color: #000000;
   font-size: 80px;
+  line-height: 77.5px;
   font-weight: bold;
   text-align: center;
   margin-top: 90px;
-  max-width: 960px;
+  max-width: 953px;
   text-transform: uppercase;
 
   @media #{$mobile} {

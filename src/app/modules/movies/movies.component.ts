@@ -8,11 +8,26 @@ import {MovieDescriptionComponent} from "./components/movie-description/movie-de
 import {MovieFilter} from "./components/movies-filters/movie-filter.typings";
 import {MOVIE_ID} from "./movies.module";
 import {ActionButton} from "./components/movie-card/movie-card.typings";
+import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss']
+  styleUrls: ['./movies.component.scss'],
+  animations: [
+    trigger(
+      'enterAnimation', [
+        transition(':enter', [
+          style({ opacity: 0}),
+          animate('1s', style({opacity: 1}))
+        ]),
+        transition(':leave', [
+          style({ opacity: 1}),
+          animate('0.3s', style({ opacity: 0}))
+        ])
+      ]
+    )
+  ],
 })
 export class MoviesComponent {
 

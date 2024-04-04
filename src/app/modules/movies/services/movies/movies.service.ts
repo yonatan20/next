@@ -23,11 +23,11 @@ export class MoviesService {
 
   getAllMovies(): Observable<Movie[]> {
     this._loading$.next(true);
-
+    setTimeout( () => this._loading$.next(false), 2000)
     return this.http.get<Movie[]>(this.apiUrl)
       .pipe(
         tap((data: Movie[]) => this._movies$.next(data)),
-        finalize(() => this._loading$.next(false))
+        //finalize(() => this._loading$.next(false))
       )
   }
 
