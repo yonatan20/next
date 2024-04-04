@@ -13,7 +13,6 @@ import {ToggleModule} from "../../common/components/toggle/toggle.module";
 import {MoviesFiltersComponent} from "./components/movies-filters/movies-filters.component";
 import {MovieCardComponent} from './components/movie-card/movie-card.component';
 import {MovieFilterPipe} from './pipes/movie-filter.pipe';
-import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 export const MOVIE_ID = 'id';
 

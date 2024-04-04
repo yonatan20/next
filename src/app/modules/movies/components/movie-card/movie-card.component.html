@@ -5,7 +5,7 @@
 
   <div class="rating-container">
     <img src="../../../../../assets/star.png" alt="image">
-    <span class="value">{{movie.rating || 'N/A'}}</span>
+    <span class="value">{{movie.rating || 'N/A'}}<span *ngIf="descriptive">/10</span></span>
   </div>
   <div class="desc-text" *ngIf="descriptive" [innerHtml]="movie.synopsis"></div>
   <div class="more-container" (click)="actionButton.onClick(movie)">
