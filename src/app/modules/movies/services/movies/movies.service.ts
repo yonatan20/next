@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {BehaviorSubject, finalize, Observable, tap} from "rxjs";
+import {BehaviorSubject, catchError, EMPTY, finalize, Observable, tap} from "rxjs";
 import {Movie} from "./movie.interface";
 import {HttpClient} from "@angular/common/http";
 import {BASE_URL_TOKEN} from "../../../../app.module";
@@ -25,9 +25,17 @@ export class MoviesService {
     this._loading$.next(true);
     return this.http.get<Movie[]>(this.apiUrl)
       .pipe(
+        catchError(() => {
+          this.handleError();
+          return EMPTY;
+        }),
         tap((data: Movie[]) => this._movies$.next(data)),
         finalize(() => this._loading$.next(false))
       )
   }
 
+  private handleError() {
+    //raise a toast or something
+    return;
+  }
 }
